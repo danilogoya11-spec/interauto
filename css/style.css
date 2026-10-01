@@ -73,10 +73,13 @@ a {
     display: grid;
     gap: 0px;
     padding: 20px;
+    background-color: rgb(250, 239, 226);
+    border-radius: 20px;
  }
   #ofertas{
     font-size: 50px;
     text-align: center;
+    line-height: 1.5;
  }
  .carros{
     display: grid;
@@ -114,13 +117,21 @@ a {
     display: flex;
     width: 100%;  
     border-radius: 100px;
+    overflow: hidden;
 }
 
-.imagens img {
-    width: 50%;
-    height: auto;
+.imagens a{
+   flex: 1 1 0;             
+    min-width: 0;
     display: block;
 }
+.imagens img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 #img1{
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
