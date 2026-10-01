@@ -9,8 +9,8 @@
     </head>
     <body>
         <header>
-                 <a href="index.html" class="logo">
-                    <img src="screen.png" alt="Interauto">
+                 <a href="index (1).html" class="logo">
+                    <img src="./img/loog2.png" alt="Interauto">
                 </a>
             <nav>
                 <h1>
@@ -19,21 +19,36 @@
                 <a href="sobre.html">Sobre Nós</a>
                 </h1>
             </nav>
-            <a href="index.html">
+            <a href="index (1).html">
                 <button>Voltar</button>
             </a>
         </header>
         <br>
-        <div class="login">
-            <form action="processar.php" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome"><br><br>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha"><br><br>
-                <input type="submit" value="Cadastrar">
-            </form>
-        </div>
+        <section class="login-container">
+            <div class="login">
+                <form action="processar.php" method="post">
+                    <h3>Seja bem vindo de volta!</h3>
+                    <div class="input-container">
+                        <input placeholder="    Email" type="email" id="email" name="email"><br><br>
+                    </div>
+                    <div class="input-container">
+                        <input placeholder="    Senha" type="password" id="senha" name="senha"><br><br>
+                    </div>
+                    <div class="remember-forgot">
+                        <label>
+                        <input type="checkbox">
+                        Lembrar minha senha
+                        </label>
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                        
+                    <button type="submit">Entrar</button>
+
+                    <div class="register-link">
+                        <p>Não tem uma conta? <a href="cadastro.html"> Cadastre-se</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
     </body>
 </html>
