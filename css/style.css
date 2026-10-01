@@ -1,0 +1,150 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #18181B;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 10px solid rgba(255, 253, 253, 0.116);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.192);
+    text-align: justify;
+ }
+ header button{
+    background-color: rgb(255, 123, 0);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+ }
+ .logo img {
+    height: 70px;      
+    width: auto;       
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+.capa img{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    display: block;
+    border-radius: 100px;
+
+}
+#parceria{
+      font-size: 50px;
+      text-align: center;
+}
+.parceiros{
+    align-items: center;
+}
+.parceiros article{
+   display: flex;
+   justify-content: space-evenly;
+   font-size: 50px;
+   font-weight: bold;
+}
+.parceiros img{
+   height: 100px;
+   width: 200px;
+   object-fit: cover;
+   display: block;
+   border-radius: 200px;
+   object-position:center;
+}
+.parceiros div{
+   align-items: center;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+ .ofertas-carros{
+    display: grid;
+    gap: 0px;
+    padding: 20px;
+    background-color: rgb(255, 240, 220);
+    border-radius: 20px;
+ }
+  #ofertas{
+    font-size: 50px;
+    text-align: center;
+ }
+ .carros{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+ }
+ .card {
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+ .card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+ }
+ .card button{
+    width: 100%;
+    border: none;
+    background-color: rgb(255, 123, 0);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+   font-weight: bold;
+   margin-top: auto;
+
+ }
+ .imagens {
+    display: flex;
+    width: 100%;  
+    border-radius: 100px;
+}
+
+.imagens img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+#img1{
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+}
+#img2{
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+}
+#rodape{
+   display: block;
+   align-items: center;
+   text-align: center;
+   border-top: 2px solid rgba(0, 0, 0, 0.192);
+}
+#rodape div {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+#rodape div img{
+  height: 70px;      
+    width: auto;       
+    display: block;
+}
+ 
