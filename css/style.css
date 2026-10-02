@@ -172,19 +172,53 @@ a {
 }
 .sobre-texto {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;  
-  column-gap: 100px;
+  grid-template-columns: 1.3fr 1fr;
+  column-gap: 70px;
   align-items: center;
-  width: 100%;                      
+  width: 100%;
   text-align: left;
-  font-size: 20px;
+  padding-right: 20px;
+}
+
+.sobre-texto p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #000000;
+  margin-bottom: 20px;
+  max-width: 620px;
+  padding-left: 20px;
+}
+
+.sobre-texto strong {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.sobre-imagem {
+  position: relative;
+}
+
+.sobre-imagem::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: #fdac60;
+  border-radius: 20px;
+  z-index: 0;
 }
 
 .sobre-texto img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 400px;
   object-fit: cover;
   display: block;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 .valores {
   display: flex;
