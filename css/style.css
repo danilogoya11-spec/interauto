@@ -34,13 +34,64 @@ a {
   text-decoration: none;
   color: inherit; 
 }
-.capa img{
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 100px;
-
+.capa{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 50px;
+   text-align: center;
+   background-color: #14181F;
 }
+.capa h1 {
+font-size: 60px;
+padding-left: 20px;
+color: #ffffff;
+font-weight: bold;
+line-height: 0,5;
+}
+.capa h2 {
+align-self: center;
+background-color: #fff4e8;
+}
+.capa-texto {
+display: grid;
+grid-template-columns: 1fr 1fr;
+column-gap: 40px;
+align-items: center;
+width: 100%;
+text-align: left;
+padding-right: 20px;
+}
+
+.capa-texto p {
+font-size: 19px;
+line-height: 1.8;
+color: #ffffff;
+margin-bottom: 20px;
+max-width: 620px;
+padding-left: 20px;
+}
+
+.capa-texto strong {
+color: #f97316;
+font-weight: 600;
+}
+
+.capa-imagem {
+position: relative;
+}
+
+.capa-texto img {
+position: relative;
+z-index: 1;
+width: 100%;
+  height: auto;          /* mantém a proporção original */
+object-fit: contain;
+display: block;
+border-radius: 20px;
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
 #parceria{
       font-size: 50px;
       text-align: center;
