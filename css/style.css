@@ -37,6 +37,7 @@ a {
 .capa{
    display: flex;
    flex-direction: column;
+   row-gap: 30px;
    justify-content: center;
    padding: 50px;
    text-align: center;
@@ -91,38 +92,14 @@ display: block;
 border-radius: 20px;
 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
-.capa form{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
-   color:#fff;
-}
-
-.capa form div{
-   display: flex;
-   border: 1px solid black;
-   padding: 40px 50px;
-   border-radius: 30px;
-   justify-content: center;
-   align-items: center;
-   background-color: #fff;
-   font-family: "Plus Jakarta Sans", sans-serif;
-}
-.capa form div{
- color:#000000
-}
-
-.capa button{
-   width: 300px;
-   height: 50px;
-   border: none;
-   background-color: rgb(255, 123, 0);
-   color: white;
+.frase {
+   color: #f97316;
+    background-color: #ffffff;
+   font-size: 50px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
    font-weight: bold;
-   border-radius: 6px;
-   font-size: 15px;
 }
 #parceria{
       font-size: 50px;
