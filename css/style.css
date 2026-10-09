@@ -42,6 +42,7 @@ a {
    padding: 50px;
    text-align: center;
    background-color: #14181F;
+   align-items: center;
 }
 .capa h1 {
 font-size: 60px;
@@ -99,6 +100,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     text-align: center;
     border-radius: 20px;
    font-weight: bold;
+   width: 90%;
 }
 #parceria{
       font-size: 50px;
