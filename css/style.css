@@ -37,7 +37,7 @@ a {
 .capa{
    display: flex;
    flex-direction: column;
-   row-gap: 30px;
+   row-gap: 60px;
    justify-content: center;
    padding: 50px;
    text-align: center;
@@ -93,11 +93,10 @@ border-radius: 20px;
 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 .frase {
-   color: #f97316;
-    background-color: #ffffff;
-   font-size: 50px;
+   color:   #14181F;
+    background-color:rgb(250, 239, 226);
+   font-size: 30px;
     text-align: center;
-    padding: 5px;
     border-radius: 20px;
    font-weight: bold;
 }
@@ -150,6 +149,9 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     line-height: 1.5;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
 }
  .card img{
     width: 100%;
@@ -161,7 +163,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
  .card button{
     width: 100%;
     border: none;
-    background-color: rgb(255, 123, 0);
+    background-color: #c2410c;
     color: white;
     padding: 10px;
     cursor: pointer;
@@ -234,15 +236,14 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 .sobre-texto {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  column-gap: 70px;
-  align-items: center;
+   align-items: center;
   width: 100%;
   text-align: left;
   padding-right: 20px;
 }
 
 .sobre-texto p {
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.8;
   color: #000000;
   margin-bottom: 20px;
