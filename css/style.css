@@ -1,4 +1,5 @@
 body{
+    margin: 0;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: #18181B;
 }
@@ -10,6 +11,16 @@ header{
     border-bottom: 2px solid rgba(0, 0, 0, 0.192);
     text-align: justify;
  }
+ button{
+   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+ button:hover {
+    transform: translateY(-4px);
+}
+button:active {
+    transform: translateY(-1px);
+}
  header button{
     background-color: rgb(255, 123, 0);
     color: white;
@@ -62,7 +73,6 @@ column-gap: 40px;
 align-items: center;
 width: 100%;
 text-align: left;
-padding-right: 20px;
 }
 
 .capa-texto p {
@@ -93,8 +103,19 @@ display: block;
 border-radius: 20px;
 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
+.capa-texto button{
+   background-color: rgb(255, 123, 0);
+   color: white;
+   font-weight: bold;
+   border: none;
+   border-radius: 6px;
+   font-family: "Plus Jakarta Sans", sans-serif;
+   padding: 10px 20px;
+   box-sizing: border-box; 
+   margin-left: 20px;
+ }
 .frase {
-   color:   #14181F;
+   color:   #c2410c;
     background-color:rgb(250, 239, 226);
    font-size: 30px;
     text-align: center;
@@ -102,32 +123,58 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    font-weight: bold;
    width: 90%;
 }
-#parceria{
-      font-size: 50px;
-      text-align: center;
-}
+
 .parceiros{
-    align-items: center;
-}
-.parceiros article{
+   flex-direction: column;
+   align-items: center;
    display: flex;
-   justify-content: space-evenly;
-   font-size: 50px;
-   font-weight: bold;
+   gap: 20px;
+   padding: 20px;
+   background-color: #faefe2;
 }
+#parceria{
+      font-size: 30px;
+      text-align: center;
+      border-radius: 20px;
+      background-color: #faefe2;
+      color: #c2410c;
+      border: 2px solid #c2410c;
+      width: 30%;
+      padding: 20px;
+      box-sizing: border-box; 
+}
+.titulo{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.texto{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   gap: 300px;   
+   font-size: 50px;
+}
+
 .parceiros img{
-   height: 100px;
-   width: 200px;
-   object-fit: cover;
-   display: block;
-   border-radius: 200px;
-   object-position:center;
+   height: 200px;
+   width: 400px;
+   object-fit: contain;
+   padding: 10px;
+   background-color: #faefe2;
+   border-radius: 20px;
+   box-sizing: border-box;
 }
 .parceiros div{
    align-items: center;
    text-align: center;
    display: flex;
    flex-direction: column;
+   background-color: #faefe2;
+   border-radius: 20px;
+   padding: 10px;
 }
  .ofertas-carros{
     display: grid;
@@ -144,10 +191,11 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
  .carros{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
+    gap: 40px;
  }
  .card {
     width: 100%;
+     box-sizing: border-box; 
     line-height: 1.5;
     display: flex;
     flex-direction: column;
