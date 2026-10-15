@@ -4,13 +4,21 @@ body{
     color: #18181B;
 }
 header{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    border: 10px solid rgba(255, 253, 253, 0.116);
+    padding: 10px 30px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.192);
-    text-align: justify;
- }
+}
+header > a:first-child{
+    justify-self: start;
+}
+header > a:last-child{
+    justify-self: end;
+}
+header nav h1{
+    margin: 0;
+}
  button{
    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -471,3 +479,192 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    width: 300px;
 }
 
+
+
+/* =====================================================
+   RESPONSIVO + AVISOS DE FORMULÁRIO (acrescentado no fim)
+   Nada acima deste bloco foi alterado.
+   ===================================================== */
+
+img {
+   max-width: 100%;
+}
+
+.aviso-form {
+   font-size: 14px;
+   margin: 0;
+   max-width: 300px;
+   text-align: center;
+   overflow-wrap: anywhere;
+}
+.aviso-form:empty {
+   display: none;
+}
+.aviso-form.erro {
+   color: #b91c1c;
+}
+.aviso-form.info {
+   color: #52525b;
+}
+
+/* Parceiros: com gap de 300px os 3 cards (400px cada) passavam de 1800px de
+   largura e criavam rolagem lateral em notebooks (1280px, 1366px). */
+@media (max-width: 1900px) {
+   .texto {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+   }
+}
+
+@media (max-width: 1000px) {
+   .carros {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+   }
+   .capa-texto {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+   }
+   .capa h1 {
+      font-size: 44px;
+      padding-left: 0;
+   }
+   .capa-texto p {
+      padding-left: 0;
+      max-width: none;
+   }
+   .capa-texto button {
+      margin-left: 0;
+   }
+   .texto {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      font-size: 36px;
+   }
+   .sobre {
+      overflow-x: hidden;
+   }
+   .sobre-texto {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+      padding-right: 0;
+   }
+   .valores {
+      flex-direction: column;
+      gap: 16px;
+   }
+   .equipe1,
+   .equipe2 {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+   }
+}
+
+@media (max-width: 700px) {
+   header {
+      grid-template-columns: 1fr auto;
+      row-gap: 8px;
+      padding: 10px 16px;
+   }
+   header nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: center;
+   }
+   header > a:last-child {
+      grid-column: 2;
+      grid-row: 1;
+   }
+   header nav h1 {
+      font-size: 18px;
+   }
+   .logo img {
+      height: 50px;
+   }
+   .capa {
+      padding: 30px 16px;
+   }
+   .capa h1 {
+      font-size: 34px;
+   }
+   .frase {
+      font-size: 18px;
+      width: 100%;
+      box-sizing: border-box;
+   }
+   #parceria {
+      width: 100%;
+      font-size: 24px;
+   }
+   .texto {
+      flex-direction: column;
+      align-items: center;
+      font-size: 28px;
+   }
+   .parceiros img {
+      width: 100%;
+      max-width: 280px;
+      height: 140px;
+   }
+   .carros {
+      grid-template-columns: 1fr;
+   }
+   #ofertas,
+   .ofertas-carros .titulo-secao {
+      font-size: 32px;
+   }
+   .imagens {
+      border-radius: 30px;
+   }
+   #img1 {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+   }
+   #img2 {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+   }
+   .sobre h1 {
+      font-size: 32px;
+      padding-left: 0;
+   }
+   .sobre-texto p {
+      font-size: 18px;
+      padding-left: 0;
+   }
+   .sobre-texto img {
+      height: 260px;
+   }
+   .equipe1 div,
+   .equipe2 div {
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+   }
+   .login-container {
+      padding: 20px 12px;
+   }
+   .login {
+      padding: 30px 20px;
+      box-sizing: border-box;
+      max-width: 100%;
+   }
+   .input-container input,
+   .login button,
+   .remember-forgot {
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+   }
+   .remember-forgot {
+      flex-wrap: wrap;
+      gap: 6px;
+   }
+   #rodape div {
+      flex-direction: column;
+      gap: 12px;
+   }
+}

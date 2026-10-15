@@ -3,6 +3,7 @@
     <head>
         <title>InterAuto - Cadastro</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -29,19 +30,19 @@
         <br>
         <section class="login-container">
             <div class="login">
-                <form action="processar.php" method="post">
+                <form id="form-cadastro">
                     <h2>Bem vindo!</h2>
                     <div class="input-container">
-                        <input placeholder="Nome" type="name" id="nome" name="nome"><br><br>
+                        <input placeholder="Nome" type="text" id="nome" name="nome" autocomplete="name" minlength="2" maxlength="60" required><br><br>
                     </div>
                     <div class="input-container">
-                        <input placeholder="Email" type="email" id="email" name="email"><br><br>
+                        <input placeholder="Email" type="email" id="email" name="email" autocomplete="email" maxlength="100" required><br><br>
                     </div>
                     <div class="input-container">
-                        <input placeholder="Senha" type="password" id="senha" name="senha"><br><br>
+                        <input placeholder="Senha" type="password" id="senha" name="senha" autocomplete="new-password" minlength="6" maxlength="100" required><br><br>
                     </div>
                     <div class="input-container">
-                        <input placeholder="Confirmar Senha" type="password" id="senha" name="senha"><br><br>
+                        <input placeholder="Confirmar Senha" type="password" id="confirmar-senha" name="confirmar-senha" autocomplete="new-password" minlength="6" maxlength="100" required><br><br>
                     </div>
                         
                     <button type="submit">Criar Conta</button>
@@ -59,5 +60,6 @@
                     <p style="text-align: center;">© 2026 Projeto acadêmico de Web Design – InterAuto</p>
                  </div>
             </footer>
+        <script src="../js/auth.js"></script>
     </body>
 </html>

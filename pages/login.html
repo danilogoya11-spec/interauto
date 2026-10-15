@@ -3,6 +3,7 @@
     <head>
         <title>InterAuto - Login</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -21,20 +22,20 @@
                 <a href="./sobre.html">Sobre Nós</a>
                 </h1>
             </nav>
-            <a href="./index.html">
+            <a href="../index.html">
                 <button>Voltar</button>
             </a>
         </header>
         <br>
         <section class="login-container">
             <div class="login">
-                <form action="processar.php" method="post">
+                <form id="form-login">
                     <h2>Seja bem vindo de volta!</h2>
                     <div class="input-container">
-                        <input placeholder="Email" type="email" id="email" name="email"><br><br>
+                        <input placeholder="Email" type="email" id="email" name="email" autocomplete="email" maxlength="100" required><br><br>
                     </div>
                     <div class="input-container">
-                        <input placeholder="Senha" type="password" id="senha" name="senha"><br><br>
+                        <input placeholder="Senha" type="password" id="senha" name="senha" autocomplete="current-password" maxlength="100" required><br><br>
                     </div>
                     <div class="remember-forgot">
                         <label>
@@ -63,5 +64,6 @@
                     <p style="text-align: center;">© 2026 Projeto acadêmico de Web Design – InterAuto</p>
                  </div>
             </footer>
+        <script src="../js/auth.js"></script>
     </body>
 </html>

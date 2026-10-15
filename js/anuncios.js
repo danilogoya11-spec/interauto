@@ -179,20 +179,26 @@ const Anuncios = (() => {
       ["Combustível", anuncio.combustivel],
       ["Câmbio", anuncio.cambio],
       ["Cidade", anuncio.cidade],
-    ].forEach(([rotulo, valor]) => {
-      ficha.append(el("dt", { text: rotulo }), el("dd", { text: String(valor) }));
-    });
+    ]
+      .filter(([, valor]) => valor) // ofertas fixas não têm câmbio/cidade
+      .forEach(([rotulo, valor]) => {
+        ficha.append(el("dt", { text: rotulo }), el("dd", { text: String(valor) }));
+      });
 
-    const digitos = anuncio.contato.replace(/\D/g, "");
-    const numero = digitos.length >= 12 ? digitos : "55" + digitos;
-    const mensagem = `Olá! Vi o anúncio do ${titulo} na InterAuto.`;
-    const contato = el("a", {
-      class: "btn-contato",
-      href: `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
-      target: "_blank",
-      rel: "noopener",
-      text: "Falar com o vendedor",
-    });
+    // Só mostra o botão de contato se o anúncio tiver WhatsApp
+    let contato = null;
+    if (anuncio.contato) {
+      const digitos = anuncio.contato.replace(/\D/g, "");
+      const numero = digitos.length >= 12 ? digitos : "55" + digitos;
+      const mensagem = `Olá! Vi o anúncio do ${titulo} na InterAuto.`;
+      contato = el("a", {
+        class: "btn-contato",
+        href: `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+        target: "_blank",
+        rel: "noopener",
+        text: "Falar com o vendedor",
+      });
+    }
 
     const fechar = el("button", {
       type: "button",
@@ -202,23 +208,60 @@ const Anuncios = (() => {
     });
     fechar.addEventListener("click", () => dialogo.close());
 
+    // append() escreveria a palavra "null" se recebesse null; por isso o filter
     dialogo.append(
-      fechar,
-      principal,
-      anuncio.fotos.length > 1 ? miniaturas : null,
-      el("h2", { text: titulo }),
-      el("p", { class: "modal-preco", text: brl(anuncio.preco) }),
-      ficha,
-      anuncio.descricao ? el("p", { class: "modal-desc", text: anuncio.descricao }) : null,
-      contato
+      ...[
+        fechar,
+        principal,
+        anuncio.fotos.length > 1 ? miniaturas : null,
+        el("h2", { text: titulo }),
+        el("p", { class: "modal-preco", text: brl(anuncio.preco) }),
+        ficha,
+        anuncio.descricao ? el("p", { class: "modal-desc", text: anuncio.descricao }) : null,
+        contato,
+      ].filter(Boolean)
     );
     dialogo.showModal();
+  }
+
+  /* ---------- ofertas fixas da home ---------- */
+
+  /* Os cards de "Ofertas especiais" são escritos à mão no HTML.
+     Esta função lê os dados do próprio card para abrir o mesmo modal. */
+  function lerCardFixo(card) {
+    const titulo = card.querySelector("h2").textContent.trim();
+    const [marca, ...resto] = titulo.split(" ");
+    const p = card.querySelector("p");
+    const [ano, quilometragem, combustivel] = p.firstChild.textContent
+      .split("·")
+      .map((s) => s.trim());
+
+    return {
+      marca,
+      modelo: resto.join(" "),
+      ano,
+      km: parseInt(quilometragem.replace(/\D/g, ""), 10),
+      combustivel,
+      preco: parseInt(p.querySelector("strong").textContent.replace(/\D/g, ""), 10),
+      descricao: p.lastChild.textContent.trim(),
+      fotos: [card.querySelector("img").src],
+    };
+  }
+
+  function ativarOfertas(container) {
+    container.querySelectorAll(".card").forEach((card) => {
+      const botao = card.querySelector("button");
+      if (!botao) return;
+      botao.textContent = "Ver detalhes";
+      botao.addEventListener("click", () => abrirModal(lerCardFixo(card)));
+    });
   }
 
   /* ---------- lista ---------- */
 
   function renderLista(container, opcoes = {}) {
-    const anuncios = listar();
+    let anuncios = listar();
+    if (opcoes.limite) anuncios = anuncios.slice(0, opcoes.limite);
     container.replaceChildren();
 
     if (anuncios.length === 0) {
@@ -233,14 +276,27 @@ const Anuncios = (() => {
     anuncios.forEach((a) => container.append(criarCard(a, opcoes)));
   }
 
-  // Na página Comprar: se existir #lista-anuncios, desenha os anúncios sozinho
+  /* Se existir #lista-anuncios, desenha os anúncios sozinho.
+     Atributos opcionais no elemento:
+       data-limite="8"        -> mostra só os 8 mais recentes (home)
+       data-ocultar-vazio     -> esconde a seção inteira se não houver anúncios */
   document.addEventListener("DOMContentLoaded", () => {
+    // Home: cards fixos logo abaixo do título "Ofertas especiais"
+    const fixas = document.querySelector("#ofertas + .carros:not(#lista-anuncios)");
+    if (fixas) ativarOfertas(fixas);
+
     const c = document.querySelector("#lista-anuncios");
-    if (c) {
-      renderLista(c, {
-        mensagemVazia: "Nenhum anúncio publicado ainda. Seja o primeiro a vender!",
-      });
+    if (!c) return;
+
+    if (c.hasAttribute("data-ocultar-vazio") && listar().length === 0) {
+      (c.closest("section") || c).style.display = "none";
+      return;
     }
+
+    renderLista(c, {
+      limite: Number(c.dataset.limite) || 0,
+      mensagemVazia: "Nenhum anúncio publicado ainda. Seja o primeiro a vender!",
+    });
   });
 
   return { listar, adicionar, remover, renderLista };

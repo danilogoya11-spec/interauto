@@ -398,3 +398,21 @@
     height: 240px;
   }
 }
+
+/* ---------- seção de anúncios na página inicial ---------- */
+
+.ofertas-carros .titulo-secao {
+  font-size: 50px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ver-todos {
+  justify-self: center;
+  margin-top: 30px;
+  padding: 12px 28px;
+  border-radius: 6px;
+  background-color: rgb(255, 123, 0);
+  color: #ffffff;
+  font-weight: bold;
+}

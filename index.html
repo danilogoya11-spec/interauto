@@ -3,11 +3,12 @@
     <head>
         <title>InterAuto</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="../css/anuncios.css">
+        <link rel="stylesheet" href="css/anuncios.css">
         <link rel="icon" type="image/png" href="images/telas/favicon.png">
     </head>
     <body>
@@ -67,157 +68,60 @@
                 </div>
             </article>
          </section>
+
         <section class="ofertas-carros">
-            <h1 id="ofertas">Ofertas especias:</h1>
+            <h1 class="titulo-secao">Anúncios recentes</h1>
+            <div id="lista-anuncios" class="carros lista-anuncios" data-limite="8" data-ocultar-vazio></div>
+            <a href="pages/comprar.html" class="ver-todos">Ver todos os carros</a>
+        </section>
+
+        <section class="ofertas-carros">
+            <h1 id="ofertas">Ofertas especiais:</h1>
             <div class="carros">
 
                 <article class="card">
-                     <img src="images/carros/Chevrolet_Celta.jpg" alt="Carro" height="250">
+                    <img src="images/carros/Chevrolet_Celta.jpg" alt="Chevrolet Celta">
                     <h2>Chevrolet Celta</h2>
                     <p>2010 · 89.000 Km · Flex<br>
                         <strong>R$ 24.900<br></strong>
                         Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade.
                     </p>
-                    <button>Comprar</button>
-                </article>
-                <article class="card">
-                    <img src="images/carros/Honda_Accord.jpg" alt="Carro">
-                    <h2>Honda Accord</h2>
-                    <p>1994 · 178.000 Km · Gasolina<br>
-                      <strong> R$ 32.900<br></strong>
-                        Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.</p>
-                    <button>Comprar</button>
+                    <button>Ver detalhes</button>
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Uno.jpg" alt="Carro">
-                    <h2>Fiat Uno</h2>
-                    <p>1998 · 142.000 Km · Gasolina<br>
-                       <strong>R$ 14.500<br></strong> 
-                        Clássico bem conservado, motor forte e baixo custo de manutenção. Ótimo primeiro carro.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-
-                <article class="card">
-                    <img src="images/carros/Fiat_Palio.jpg" alt="Carro" >
-                    <h2>Fiat Palio</h2>
-                    <p>2003 · 105.000 Km · Flex<br>
-                      <strong> R$ 19.900<br></strong>
-                        Direção leve, ótimo para cidade, documentação em dia. Aceita troca.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                <article class="card">
-                    <img src="images/carros/Fiat_Palio.jpg" alt="Carro" >
-                    <h2>Fiat Palio</h2>
-                    <p>2003 · 105.000 Km · Flex<br>
-                      <strong> R$ 19.900<br></strong>
-                        Direção leve, ótimo para cidade, documentação em dia. Aceita troca.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                 <article class="card">
-                     <img src="images/carros/Fiat_Uno.jpg" alt="Carro">
-                    <h2>Fiat Uno</h2>
-                    <p>1998 · 142.000 Km · Gasolina<br>
-                       <strong>R$ 14.500<br></strong>
-                        Clássico bem conservado, motor forte e baixo custo de manutenção. Ótimo primeiro carro.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                <article class="card">
-                    <img src="images/carros/Honda_Accord.jpg" alt="Carro">
+                    <img src="images/carros/Honda_Accord.jpg" alt="Honda Accord">
                     <h2>Honda Accord</h2>
                     <p>1994 · 178.000 Km · Gasolina<br>
                         <strong>R$ 32.900<br></strong>
-                        Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.</p>
-                    <button>Comprar</button>
-                </article>
-                 <article class="card">
-                     <img src="images/carros/Chevrolet_Celta.jpg" alt="Carro" height="250">
-                    <h2>Chevrolet Celta</h2>
-                    <p>2010 · 89.000 Km · Flex<br>
-                        <strong>R$ 24.900<br></strong>
-                        Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade.
+                        Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.
                     </p>
-                    <button>Comprar</button>
-                </article>
-                 <article class="card">
-                    <img src="images/carros/Chevrolet_Celta.jpg" alt="Carro" height="250">
-                    <h2>Chevrolet Celta</h2>
-                    <p>2010 · 89.000 Km · Flex<br>
-                        <strong>R$ 24.900<br></strong>
-                        Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                <article class="card">
-                   <img src="images/carros/Honda_Accord.jpg" alt="Carro">
-                    <h2>Honda Accord</h2>
-                    <p>1994 · 178.000 Km · Gasolina<br>
-                        <strong>R$ 32.900<br></strong>
-                        Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.</p>
-                    <button>Comprar</button>
+                    <button>Ver detalhes</button>
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Uno.jpg" alt="Carro">
+                    <img src="images/carros/Fiat_Uno.jpg" alt="Fiat Uno">
                     <h2>Fiat Uno</h2>
                     <p>1998 · 142.000 Km · Gasolina<br>
                         <strong>R$ 14.500<br></strong>
                         Clássico bem conservado, motor forte e baixo custo de manutenção. Ótimo primeiro carro.
                     </p>
-                    <button>Comprar</button>
+                    <button>Ver detalhes</button>
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Palio.jpg" alt="Carro" >
+                    <img src="images/carros/Fiat_Palio.jpg" alt="Fiat Palio">
                     <h2>Fiat Palio</h2>
                     <p>2003 · 105.000 Km · Flex<br>
                         <strong>R$ 19.900<br></strong>
                         Direção leve, ótimo para cidade, documentação em dia. Aceita troca.
                     </p>
-                    <button>Comprar</button>
+                    <button>Ver detalhes</button>
                 </article>
-                <article class="card">
-                    <img src="images/carros/Fiat_Palio.jpg" alt="Carro" >
-                    <h2>Fiat Palio</h2>
-                    <p>2003 · 105.000 Km · Flex<br>
-                      <strong> R$ 19.900<br></strong>
-                        Direção leve, ótimo para cidade, documentação em dia. Aceita troca.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                 <article class="card">
-                     <img src="images/carros/Fiat_Uno.jpg" alt="Carro">
-                    <h2>Fiat Uno</h2>
-                    <p>1998 · 142.000 Km · Gasolina<br>
-                       <strong>R$ 14.500<br></strong>
-                        Clássico bem conservado, motor forte e baixo custo de manutenção. Ótimo primeiro carro.
-                    </p>
-                    <button>Comprar</button>
-                </article>
-                <article class="card">
-                    <img src="images/carros/Honda_Accord.jpg" alt="Carro">
-                    <h2>Honda Accord</h2>
-                    <p>1994 · 178.000 Km · Gasolina<br>
-                        <strong>R$ 32.900<br></strong>
-                        Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.</p>
-                    <button>Comprar</button>
-                </article>
-                 <article class="card">
-                     <img src="images/carros/Chevrolet_Celta.jpg" alt="Carro" height="250">
-                    <h2>Chevrolet Celta</h2>
-                    <p>2010 · 89.000 Km · Flex<br>
-                        <strong>R$ 24.900<br></strong>
-                        Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade.
-                    </p>
-                    <button>Comprar</button>
-                </article>
+
             </div>
-            </section>
-            <br><br><br><br>
+        </section>
+        <br><br><br><br>
         <div class="imagens">
             <a href="pages/comprar.html">
                 <img id="img1" src="images/banners/interauto_comprar.png" alt="Carro">
@@ -238,6 +142,7 @@
                  </div>
             </footer>
 
+            <script src="js/anuncios.js"></script>
             <script src="script.js"></script>
         </body>
 </html>
