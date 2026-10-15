@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <title>InterAuto - Vender</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/anuncios.css">
         <link rel="icon" type="image/png" href="../images/telas/favicon.png">
     </head>
     <body>
@@ -25,6 +27,85 @@
                  <button>Login</button>
             </a>
         </header>
-        <br>
+
+        <main>
+            <section class="vender">
+                <h1>Anuncie seu carro</h1>
+                <p class="vender-intro">Preencha os dados e adicione as fotos. O anúncio aparece na página Comprar.</p>
+
+                <form id="form-anuncio" class="vender-form">
+                    <div class="campo">
+                        <label for="marca">Marca</label>
+                        <input id="marca" name="marca" type="text" placeholder="Fiat" maxlength="30" required>
+                    </div>
+                    <div class="campo">
+                        <label for="modelo">Modelo</label>
+                        <input id="modelo" name="modelo" type="text" placeholder="Palio 1.0" maxlength="40" required>
+                    </div>
+                    <div class="campo">
+                        <label for="ano">Ano</label>
+                        <input id="ano" name="ano" type="number" min="1950" placeholder="2010" required>
+                    </div>
+                    <div class="campo">
+                        <label for="km">Quilometragem (Km)</label>
+                        <input id="km" name="km" type="number" min="0" placeholder="89000" required>
+                    </div>
+                    <div class="campo">
+                        <label for="combustivel">Combustível</label>
+                        <select id="combustivel" name="combustivel" required>
+                            <option>Flex</option>
+                            <option>Gasolina</option>
+                            <option>Etanol</option>
+                            <option>Diesel</option>
+                            <option>Híbrido</option>
+                            <option>Elétrico</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="cambio">Câmbio</label>
+                        <select id="cambio" name="cambio" required>
+                            <option>Manual</option>
+                            <option>Automático</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="preco">Preço (R$)</label>
+                        <input id="preco" name="preco" type="number" min="1" placeholder="24900" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" name="cidade" type="text" placeholder="Sorocaba, SP" maxlength="60" required>
+                    </div>
+                    <div class="campo">
+                        <label for="contato">WhatsApp</label>
+                        <input id="contato" name="contato" type="tel" placeholder="(15) 99999-9999" required>
+                    </div>
+                    <div class="campo campo-largo">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" rows="4" maxlength="400" placeholder="Conte o estado do carro, revisões, documentação e o que mais ajudar o comprador."></textarea>
+                    </div>
+
+                    <div class="campo campo-largo">
+                        <span class="rotulo">Fotos (até 6, a primeira é a capa)</span>
+                        <label for="fotos" class="dropzone">Escolher fotos</label>
+                        <input id="fotos" type="file" accept="image/*" multiple class="sr-only">
+                        <div id="preview-fotos" class="preview-fotos"></div>
+                    </div>
+
+                    <div id="mensagem" class="mensagem" role="alert"></div>
+
+                    <button type="submit" class="btn-publicar">Publicar anúncio</button>
+                </form>
+            </section>
+
+            <section class="meus-anuncios">
+                <h2>Anúncios publicados</h2>
+                <div id="meus-anuncios" class="carros lista-anuncios"></div>
+            </section>
+        </main>
+        <br><br>
+
+        <script src="../js/anuncios.js"></script>
+        <script src="../js/vender.js"></script>
     </body>
 </html>
