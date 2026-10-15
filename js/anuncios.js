@@ -1,7 +1,3 @@
-/* InterAuto - módulo de anúncios
-   Guarda os anúncios no localStorage e desenha os cards.
-   Usado pela página Vender (criar/excluir) e pela página Comprar (listar). */
-
 const Anuncios = (() => {
   const CHAVE = "interauto:anuncios";
 
