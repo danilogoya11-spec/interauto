@@ -92,6 +92,17 @@ font-weight: bold;
 .capa-imagem {
 position: relative;
 }
+.capa-imagem::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: #f97316;
+  border-radius: 20px;
+  z-index: 0;
+}
 
 .capa-texto img {
 position: relative;
@@ -103,6 +114,7 @@ display: block;
 border-radius: 20px;
 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
+
 .capa-texto button{
    background-color: rgb(255, 123, 0);
    color: white;
@@ -116,14 +128,56 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    margin-left: 20px;
  }
 .frase {
-   color:   #c2410c;
-   font-style: italic;
-    background-color:rgb(250, 239, 226);
-   font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 760px;
+}
+
+.frase-icone {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.frase-linha {
+    width: 50px;
+    height: 1px;
+    background-color: #7c2d12;
+}
+
+.frase-aspas {
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    border: 1px solid #f97316;
+    border-radius: 50%;
+    color: #f97316;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    padding-top: 14px;     
     text-align: center;
-    border-radius: 20px;
-   font-weight: bold;
-   width: 90%;
+}
+
+.frase p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.frase-autor {
+    margin-top: 16px;
+    color: #f97316;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .parceiros{
@@ -224,7 +278,6 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     gap: 0px;
     padding: 20px;
     background-color: rgb(250, 239, 226);
-    border-radius: 20px;
  }
   #ofertas{
     font-size: 50px;
@@ -245,6 +298,13 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     background-color: #ffffff;
     padding: 10px;
     border-radius: 20px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+.card:hover {
+    transform: scale(1.02);
+    background-color: #fffffe;
+
 }
  .card img{
     width: 100%;
