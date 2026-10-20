@@ -8,7 +8,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/anuncios.css">
+        <link rel="stylesheet" href="../css/lojas.css">
+        <!-- Mapa: Leaflet + OpenStreetMap (sem chave de API) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
         <link rel="icon" type="image/png" href="../images/telas/favicon.png">
     </head>
     <body>
@@ -29,9 +31,46 @@
         </header>
         <br>
         <section class="ofertas-carros">
-            <h1 id="ofertas">Carros à venda</h1>
-            <div id="lista-anuncios" class="carros lista-anuncios"></div>
+            <div class="container">
+                <h1 id="ofertas">Carros à venda</h1>
+                <p class="sub-comprar">Veja os carros disponíveis em cada loja InterAuto.</p>
+
+                <form id="filtros" class="filtros" autocomplete="off" onsubmit="return false">
+                    <label>Marca
+                        <input id="f-marca" type="text" placeholder="Ex.: Fiat">
+                    </label>
+                    <label>Modelo
+                        <input id="f-modelo" type="text" placeholder="Ex.: Palio">
+                    </label>
+                    <label>Km máxima
+                        <input id="f-km" type="number" min="0" step="1000" placeholder="Ex.: 100000">
+                    </label>
+                    <label>Preço máximo (R$)
+                        <input id="f-preco" type="number" min="0" step="500" placeholder="Ex.: 30000">
+                    </label>
+                    <label>Cidade da loja
+                        <input id="f-cidade" type="text" list="cidades" placeholder="Ex.: Sorocaba">
+                        <datalist id="cidades"></datalist>
+                    </label>
+                    <button type="reset" class="btn-sec">Limpar filtros</button>
+                </form>
+
+                <div class="barra-info">
+                    <span id="contador" aria-live="polite"></span>
+                    <button id="btn-local" type="button">Usar minha localização</button>
+                </div>
+
+                <div id="lista-carros" class="grade-carros"></div>
+                <p id="vazio" class="vazio" hidden>Nenhum carro encontrado com esses filtros. Tente aumentar o preço ou a km máxima.</p>
+            </div>
         </section>
+
+        <!-- Card expandido -->
+        <dialog id="modal-carro" aria-label="Detalhes do carro">
+            <div class="modal-topo"><button id="modal-fechar" type="button">Fechar</button></div>
+            <div id="modal-conteudo"></div>
+        </dialog>
+
         <br><br>
          <footer id="rodape">
                 <br><br>
@@ -43,6 +82,9 @@
                     <p style="text-align: center;">© 2026 Projeto acadêmico de Web Design – InterAuto</p>
                  </div>
             </footer>
-        <script src="../js/anuncios.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+        <script src="../js/lojas.js"></script>
+        <script src="../js/comprar.js"></script>
     </body>
 </html>

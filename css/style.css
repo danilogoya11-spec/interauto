@@ -284,11 +284,75 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     text-align: center;
     line-height: 1.5;
  }
- .carros{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
- }
+
+ .carrossel-container {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   width: 100%;
+   max-width: 100%;
+   min-width: 0;
+   box-sizing: border-box;
+}
+
+.carros {
+   display: flex;
+   gap: 20px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   scrollbar-width: none;
+   flex: 1;
+   min-width: 0;
+   width: 0;
+   box-sizing: border-box;
+}
+
+.carros::-webkit-scrollbar {
+   display: none;
+}
+
+
+.carros .card {
+   flex: 0 0 calc((100% - 60px) / 4);
+   min-width: 0;
+   box-sizing: border-box;
+}
+
+
+.carros .card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+}
+
+.seta-carrossel {
+   flex-shrink: 0;
+   width: 36px;
+   height: 36px;
+   padding: 0;
+   border: none;
+   border-radius: 50%;
+   background-color: #c2410c;
+   color: white;
+   font-size: 18px;
+   cursor: pointer;
+}
+.seta-carrossel:hover {
+   background-color: #f97316;
+}
+
+@media (max-width: 900px) {
+   .carros .card {
+       flex-basis: calc((100% - 24px) / 2);
+   }
+}
+
+@media (max-width: 500px) {
+   .carros .card {
+       flex-basis: 100%;
+   }
+}
+
  .card {
     width: 100%;
      box-sizing: border-box; 

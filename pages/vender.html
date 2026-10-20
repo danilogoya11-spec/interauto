@@ -1,4 +1,4 @@
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <title>InterAuto - Vender</title>
@@ -9,6 +9,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/anuncios.css">
+        <link rel="stylesheet" href="../css/lojas.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
         <link rel="icon" type="image/png" href="../images/telas/favicon.png">
     </head>
     <body>
@@ -29,79 +31,75 @@
         </header>
         <main>
             <section class="corpo">
-            <section class="vender">
-                <h1 id="anuncio">VENDER</h1>
-                <h1>Anuncie seu carro</h1>
-                <p class="vender-intro">Preencha os dados e adicione as fotos. O anúncio aparece na página Comprar.</p>
+                <!-- Contato com a loja -->
+                <section class="vender">
+                    <h1 id="anuncio">VENDER</h1>
+                    <h1>Venda seu carro com a InterAuto</h1>
+                    <p class="vender-intro">Conte sobre o seu carro e escolha a loja. Um consultor responde pelo WhatsApp com a avaliação.</p>
 
-                <form id="form-anuncio" class="vender-form">
-                    <div class="campo">
-                        <label for="marca">Marca</label>
-                        <input id="marca" name="marca" type="text" placeholder="Fiat" maxlength="30" required>
-                    </div>
-                    <div class="campo">
-                        <label for="modelo">Modelo</label>
-                        <input id="modelo" name="modelo" type="text" placeholder="Palio 1.0" maxlength="40" required>
-                    </div>
-                    <div class="campo">
-                        <label for="ano">Ano</label>
-                        <input id="ano" name="ano" type="number" min="1950" placeholder="2010" required>
-                    </div>
-                    <div class="campo">
-                        <label for="km">Quilometragem (Km)</label>
-                        <input id="km" name="km" type="number" min="0" placeholder="89000" required>
-                    </div>
-                    <div class="campo">
-                        <label for="combustivel">Combustível</label>
-                        <select id="combustivel" name="combustivel" required>
-                            <option>Flex</option>
-                            <option>Gasolina</option>
-                            <option>Etanol</option>
-                            <option>Diesel</option>
-                            <option>Híbrido</option>
-                            <option>Elétrico</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="cambio">Câmbio</label>
-                        <select id="cambio" name="cambio" required>
-                            <option>Manual</option>
-                            <option>Automático</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="preco">Preço (R$)</label>
-                        <input id="preco" name="preco" type="number" min="1" placeholder="24900" required>
-                    </div>
-                    <div class="campo">
-                        <label for="cidade">Cidade</label>
-                        <input id="cidade" name="cidade" type="text" placeholder="Sorocaba, SP" maxlength="60" required>
-                    </div>
-                    <div class="campo">
-                        <label for="contato">WhatsApp</label>
-                        <input id="contato" name="contato" type="tel" placeholder="(15) 99999-9999" required>
-                    </div>
-                    <div class="campo campo-largo">
-                        <label for="descricao">Descrição</label>
-                        <textarea id="descricao" name="descricao" rows="4" maxlength="400" placeholder="Conte o estado do carro, revisões, documentação e o que mais ajudar o comprador."></textarea>
-                    </div>
+                    <form id="form-venda" class="vender-form">
+                        <div class="campo">
+                            <label for="nome">Seu nome</label>
+                            <input id="nome" name="nome" type="text" placeholder="Nome completo" maxlength="60" required>
+                        </div>
+                        <div class="campo">
+                            <label for="telefone">WhatsApp</label>
+                            <input id="telefone" name="telefone" type="tel" placeholder="(15) 99999-9999" required>
+                        </div>
+                        <div class="campo">
+                            <label for="marca">Marca</label>
+                            <input id="marca" name="marca" type="text" placeholder="Fiat" maxlength="30" required>
+                        </div>
+                        <div class="campo">
+                            <label for="modelo">Modelo</label>
+                            <input id="modelo" name="modelo" type="text" placeholder="Palio 1.0" maxlength="40" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ano">Ano</label>
+                            <input id="ano" name="ano" type="number" min="1950" max="2027" placeholder="2010" required>
+                        </div>
+                        <div class="campo">
+                            <label for="km">Quilometragem (Km)</label>
+                            <input id="km" name="km" type="number" min="0" placeholder="89000" required>
+                        </div>
+                        <div class="campo">
+                            <label for="combustivel">Combustível</label>
+                            <select id="combustivel" name="combustivel">
+                                <option>Flex</option><option>Gasolina</option><option>Etanol</option>
+                                <option>Diesel</option><option>Híbrido</option><option>Elétrico</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="cambio">Câmbio</label>
+                            <select id="cambio" name="cambio"><option>Manual</option><option>Automático</option></select>
+                        </div>
+                        <div class="campo">
+                            <label for="preco">Preço desejado (R$) – opcional</label>
+                            <input id="preco" name="preco" type="number" min="1" placeholder="24900">
+                        </div>
+                        <div class="campo">
+                            <label for="loja">Loja para atendimento</label>
+                            <select id="loja" name="loja" required></select>
+                        </div>
+                        <div class="campo campo-largo">
+                            <label for="mensagem-obs">Observações – opcional</label>
+                            <textarea id="mensagem-obs" name="mensagem" rows="4" maxlength="400" placeholder="Estado do carro, revisões, documentação… As fotos você envia direto no WhatsApp."></textarea>
+                        </div>
 
-                    <div class="campo campo-largo">
-                        <span class="rotulo">Fotos (até 6, a primeira é a capa)</span>
-                        <label for="fotos" class="dropzone">Escolher fotos</label>
-                        <input id="fotos" type="file" accept="image/*" multiple class="sr-only">
-                        <div id="preview-fotos" class="preview-fotos"></div>
+                        <div id="retorno" class="mensagem" role="alert"></div>
+                        <button type="submit" class="btn-publicar">Entrar em contato com a loja</button>
+                    </form>
+                </section>
+
+                <!-- Mapa das lojas -->
+                <section class="vender vender-mapa">
+                    <h2>Lojas mais perto de você</h2>
+                    <div class="cabecalho-mapa">
+                        <button id="btn-local" type="button" class="btn-sec">Usar minha localização</button>
                     </div>
-
-                    <div id="mensagem" class="mensagem" role="alert"></div>
-
-                    <button type="submit" class="btn-publicar">Publicar anúncio</button>
-                </form>
-            </section>
-            </section>
-            <section class="meus-anuncios">
-                <h2>Anúncios publicados</h2>
-                <div id="meus-anuncios" class="carros lista-anuncios"></div>
+                    <div id="mapa-lojas" class="mapa" role="region" aria-label="Mapa das lojas InterAuto"></div>
+                    <ul id="lista-lojas" class="lista-lojas"></ul>
+                </section>
             </section>
         </main>
         <br><br>
@@ -115,7 +113,9 @@
                     <p style="text-align: center;">© 2026 Projeto acadêmico de Web Design – InterAuto</p>
                  </div>
             </footer>
-        <script src="../js/anuncios.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+        <script src="../js/lojas.js"></script>
         <script src="../js/vender.js"></script>
     </body>
 </html>
