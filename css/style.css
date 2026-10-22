@@ -253,7 +253,16 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    color: #000000;
    font-weight: none;
 }
+ .texto div{
+   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
 
+ .texto div:hover {
+    transform: translateY(-8px);
+}
+.texto div:active {
+    transform: translateY(-2px);
+}
 .parceiros img{
    height: 200px;
    width: 400px;
@@ -576,7 +585,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
       flex-direction: column;
       justify-content: center;
       border: 10px solid rgba(255, 253, 253, 0.116);
-      padding: 20px;
+      padding: 40px;
       text-align: center;
 }
 .sobre h1 {
@@ -589,11 +598,12 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 .sobre-texto {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-   align-items: center;
+  grid-template-columns: 1fr 1.4fr;  
+  column-gap: 20px;                
+  align-items: center;
   width: 100%;
   text-align: left;
-  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .sobre-texto p {
@@ -612,13 +622,17 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 
 .sobre-imagem {
   position: relative;
+  width: 100%;           
+  max-width: 900px;
+  justify-self: end;
+  margin-right: 20px;
 }
 
 .sobre-imagem::before {
   content: "";
   position: absolute;
   top: 20px;
-  right: -20px;
+  left: 20px;           
   width: 100%;
   height: 100%;
   background-color: #fdac60;
@@ -710,6 +724,16 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   background-color: #fdac60;
   border-radius: 50%;
   color: white;
+}
+ .equipe1  div, .equipe2 div{
+   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+ .equipe1  div:hover, .equipe2 div:hover {
+    transform: translateY(-8px);
+}
+.equipe1  div:active, .equipe2 div:active {
+    transform: translateY(-2px);
 }
  
 .equipe2{
