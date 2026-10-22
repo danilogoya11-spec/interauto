@@ -468,7 +468,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    background-color: rgba(249, 115, 22, 0.12);
    border: 1px solid rgba(249, 115, 22, 0.45);
    color: #f97316;
-   font-size: 16px;
+   font-size: 20px;
    font-weight: 600;
 }
 
@@ -598,8 +598,8 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 .sobre-texto {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;  
-  column-gap: 20px;                
+  grid-template-columns: 1fr 1.3fr;  
+  column-gap: 30px;                
   align-items: center;
   width: 100%;
   text-align: left;
@@ -623,7 +623,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 .sobre-imagem {
   position: relative;
   width: 100%;           
-  max-width: 900px;
+  max-width: 700px;
   justify-self: end;
   margin-right: 20px;
 }
@@ -789,6 +789,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    font-weight: bold;
    border-radius: 6px;
    font-size: 15px;
+   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .remember-forgot{
@@ -935,4 +936,218 @@ header > a:last-child button:hover {
         gap: 12px;
         font-size: 14px;
     }
+}
+
+/* ===== Interatividade: página Sobre ===== */
+
+/* Revelar ao rolar */
+/* Revelar ao rolar */
+.js .revelar,
+.js .item-revelar {
+  opacity: 0;
+  translate: 0 30px;
+}
+
+.js .revelar {
+  transition: opacity 0.6s ease, translate 0.6s ease;
+}
+
+/* Itens: mantém o hover original e só atrasa o efeito de aparecer */
+.js .item-revelar {
+  transition:
+    opacity 0.6s ease var(--atraso, 0s),
+    translate 0.6s ease var(--atraso, 0s),
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.js .revelar.visivel,
+.js .item-revelar.visivel {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar,
+  .js .item-revelar {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
+/* Contadores */
+.numeros {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #14181F;
+  color: #fff;
+}
+.numeros strong {
+  font-size: 56px;
+  color: #f97316;
+}
+.numeros strong::before { content: "+"; }
+.numeros p {
+  margin: 5px 0 0;
+  font-size: 20px;
+}
+
+/* Cards da equipe expansíveis */
+.membro { cursor: pointer; }
+.bio {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+}
+.membro.aberto .bio {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Voltar ao topo */
+#topo {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: #ff7b00;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+#topo.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 760px) {
+  .numeros { flex-direction: column; gap: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* ===== Responsivo: Home e Sobre ===== */
+
+body { overflow-x: hidden; }
+
+@media (max-width: 900px) {
+
+  /* ---------- HOME: capa ---------- */
+  .capa { padding: 30px 20px; row-gap: 40px; }
+  .capa h1 { font-size: 42px; padding-left: 0; }
+  .capa-texto {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .capa-texto p {
+    font-size: 17px;
+    padding-left: 0;
+    max-width: 100%;
+  }
+  .capa-texto p br { display: none; }
+  .capa-texto button { margin-left: 0; }
+  .capa-imagem::before { top: 12px; right: -10px; }
+  .frase p { font-size: 22px; }
+
+  /* ---------- HOME: parceiros ---------- */
+  #parceria { width: auto; font-size: 16px; }
+  .destaque { font-size: 32px; }
+  .subdestaque { font-size: 18px; }
+  .subdestaque br { display: none; }
+  .texto {
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+  }
+  .texto strong { font-size: 30px; }
+  .parceiros div {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+  }
+  .parceiros img {
+    width: 100%;
+    height: 160px;
+    padding: 30px;
+  }
+
+  /* ---------- HOME: ofertas, contato e rodapé ---------- */
+  #ofertas { font-size: 32px; }
+  .contato { padding: 40px 16px; }
+  .contato-etiqueta { font-size: 16px; }
+  .imagens { flex-direction: column; gap: 12px; }
+  .imagens a { flex: none; }
+  #rodape div {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  #rodape div img { height: 50px; }
+
+  /* ---------- SOBRE ---------- */
+  .sobre { padding: 20px; }
+  .sobre h1 { font-size: 32px; padding-left: 0; }
+  .sobre h1 br { display: none; }
+  .sobre-texto {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    padding-left: 0;
+  }
+  .sobre-texto p {
+    font-size: 18px;
+    padding-left: 0;
+    max-width: 100%;
+  }
+  .sobre-imagem {
+    justify-self: stretch;
+    margin: 0 12px 12px 0;
+  }
+  .sobre-imagem::before { top: 12px; left: 12px; }
+  .sobre-texto img { height: 240px; }
+
+  .valores { flex-direction: column; gap: 16px; }
+  .valores div { flex: none; }
+
+  .numeros strong { font-size: 44px; }
+
+  .equipe { padding: 10px; gap: 24px; }
+  .equipe1,
+  .equipe2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .equipe1 div,
+  .equipe2 div {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 500px) {
+  .capa h1 { font-size: 34px; }
+  .frase p { font-size: 19px; }
+  .destaque { font-size: 26px; }
+  .sobre h1 { font-size: 28px; }
+  .sobre-texto p { font-size: 16px; }
+  .contato-conteudo h2 { font-size: 24px; }
 }
