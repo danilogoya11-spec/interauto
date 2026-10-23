@@ -78,10 +78,9 @@ const normaliza = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, ""
 /* Cria o mapa Leaflet (OpenStreetMap, sem chave de API) */
 function criarMapa(idElemento, { zoom = 10 } = {}) {
   const mapa = L.map(idElemento).setView([posicaoUsuario.lat, posicaoUsuario.lng], zoom);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    subdomains: "abcd",
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
-    attribution: "&copy; OpenStreetMap &copy; CARTO"
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mapa);
   return mapa;
 }

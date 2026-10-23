@@ -507,3 +507,51 @@
         font-size: 30px;
     }
 }
+
+/* ===== Responsivo: Comprar e Vender ===== */
+
+/* Evita estourar em telas de 320px */
+.grade-carros {
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  }
+  
+  /* Botão "Fechar" do card expandido fica visível ao rolar */
+  .modal-topo {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+  }
+  #modal-carro { overflow-y: auto; }
+  
+  @media (max-width: 900px) {
+    .sub-comprar { font-size: 28px; }
+    #modal-carro { width: 96vw; }
+    #modal-conteudo { padding: 8px 20px 20px; gap: 20px; }
+  }
+  
+  @media (max-width: 600px) {
+    /* Comprar */
+    .ofertas-carros { padding: 12px 10px; }
+    .sub-comprar { font-size: 20px; }
+    .filtros { padding: 16px; }
+    .barra-info { justify-content: center; text-align: center; }
+    .grade-carros { gap: 16px; }
+  
+    /* Card expandido */
+    #modal-conteudo { padding: 8px 14px 16px; }
+    .modal-col h2 { font-size: 24px; }
+    .car-price { font-size: 22px; }
+    .modal-img { height: 190px; }
+    .mapa { height: 220px; }
+  
+    /* Vender */
+    .corpo { padding: 12px 8px; gap: 12px; }
+    .vender { padding: 16px; margin: 8px auto; border-radius: 16px; }
+    .vender h1 { font-size: 26px; }
+    #anuncio { font-size: 16px; width: auto; }
+    .vender-mapa h2 { font-size: 24px; }
+    #mapa-lojas { height: 280px; }
+    .loja-item { font-size: 15px; padding: 10px 12px; }
+    .btn-publicar { font-size: 16px; }
+  }

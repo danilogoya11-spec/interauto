@@ -468,7 +468,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
    background-color: rgba(249, 115, 22, 0.12);
    border: 1px solid rgba(249, 115, 22, 0.45);
    color: #f97316;
-   font-size: 20px;
+   font-size: 25px;
    font-weight: 600;
 }
 
@@ -623,7 +623,7 @@ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 .sobre-imagem {
   position: relative;
   width: 100%;           
-  max-width: 700px;
+  max-width: 650px;
   justify-self: end;
   margin-right: 20px;
 }
@@ -1151,3 +1151,78 @@ body { overflow-x: hidden; }
   .sobre-texto p { font-size: 16px; }
   .contato-conteudo h2 { font-size: 24px; }
 }
+
+/* ===== Responsivo: notebook e tablet (901px a 1400px) ===== */
+@media (min-width: 901px) and (max-width: 1400px) {
+   .capa h1 { font-size: 48px; }
+   .sobre h1 { font-size: 40px; }
+ 
+   /* Parceiros: as 3 colunas passam a dividir o espaço */
+   .texto { font-size: 20px; gap: 20px; }
+   .texto strong { font-size: 32px; }
+   .texto div { flex: 1 1 0; min-width: 0; }
+   .parceiros img { width: 100%; height: 170px; padding: 30px; }
+ 
+   /* Equipe: cards flexíveis em vez de 400px fixos */
+   .equipe1, .equipe2 { gap: 24px; }
+   .equipe1 div, .equipe2 div {
+     width: auto;
+     flex: 1 1 0;
+     max-width: 400px;
+     min-width: 0;
+     box-sizing: border-box;
+   }
+ }
+ 
+ /* ===== Responsivo: login e cadastro ===== */
+ 
+ /* 16px evita o zoom automático do iPhone ao tocar no campo */
+ .input-container input { font-size: 16px; }
+ 
+ @media (max-width: 600px) {
+   .login-container { min-height: auto; padding: 20px 16px; }
+   .login {
+     width: 100%;
+     max-width: 420px;
+     box-sizing: border-box;
+     padding: 30px 20px;
+   }
+   .login form { width: 100%; gap: 20px; }
+   .input-container { width: 100%; }
+   .input-container input,
+   .login button {
+     width: 100%;
+     box-sizing: border-box;
+   }
+   .remember-forgot {
+     width: 100%;
+     flex-wrap: wrap;
+     gap: 8px;
+   }
+ }
+ 
+ /* ===== Responsivo: celulares pequenos ===== */
+ @media (max-width: 500px) {
+   .contato-atalho {
+     right: 12px;
+     bottom: 12px;
+     padding: 10px 14px;
+     font-size: 13px;
+   }
+   #topo { left: 12px; bottom: 12px; }
+   header .logo img { height: 42px; }
+   header > a:last-child button { padding: 8px 14px; }
+ }
+ 
+ /* ===== Telas de toque: evita efeito "hover" preso depois do toque ===== */
+ @media (hover: none) {
+   button:hover,
+   .card:hover,
+   .texto div:hover,
+   .equipe1 div:hover,
+   .equipe2 div:hover,
+   .contato-whatsapp:hover,
+   .contato-email:hover {
+     transform: none;
+   }
+ }
