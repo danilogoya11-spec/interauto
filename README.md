@@ -1,49 +1,68 @@
-# 🚗 Compra e Venda de Carros
+# 🚗 InterAuto — Compra e Venda de Carros
 
-Projeto de um site de **compra e venda de carros**, desenvolvido como parte dos estudos de desenvolvimento web.
+O InterAuto é um projeto acadêmico de um site de compra e venda de carros, desenvolvido para colocar em prática os conhecimentos adquiridos nas aulas de desenvolvimento web.
 
-A ideia do projeto é criar um site onde seja possível visualizar carros disponíveis para venda, conferir suas informações e facilitar a busca por um veículo.
+A ideia é criar um site onde o usuário possa conhecer os veículos disponíveis, visualizar suas informações e encontrar opções para comprar ou vender um carro.
 
-## 💻 Tecnologias
+## 💻 Tecnologias utilizadas
 
-* HTML
-* CSS
-* JavaScript
+- HTML5
+- CSS3
+- JavaScript
 
-## 🚘 O que o site tem
+## 🚘 Funcionalidades
 
-* Página inicial
-* Lista de carros disponíveis
-* Fotos dos veículos
-* Informações como modelo, ano e preço
-* Sistema de busca/filtros
-* Página com detalhes do carro
-* Design responsivo
+- Página inicial com apresentação do site.
+- Página para visualizar os carros disponíveis.
+- Página para anunciar a venda de um veículo.
+- Página sobre o projeto.
+- Página de login.
+- Exibição de imagens e informações dos veículos.
+- Elementos interativos desenvolvidos com JavaScript.
+- Layout pensado para facilitar a navegação pelo site.
 
-## 📂 Estrutura
+## 📂 Estrutura do projeto
 
 ```text
-projeto/
+InterAuto/
+│
+├── css/
+│   ├── lojas.css
+│   └── style.css
+│
+├── images/
+│   ├── banners/
+│   ├── carros/
+│   ├── icones/
+│   └── telas/
+│
+├── js/
+│   ├── comprar.js
+│   ├── efeitos.js
+│   ├── lojas.js
+│   ├── script.js
+│   └── vender.js
+│
+├── pages/
+│   ├── _DS_Store
+│   └── README.md
 │
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── imagens/
 └── README.md
 ```
 
 ## 🎯 Objetivo
 
-O objetivo é colocar em prática o que estamos aprendendo sobre **HTML, CSS e JavaScript**, além de melhorar nossos conhecimentos sobre criação de sites e organização de projetos.
+O objetivo desse projeto é praticar HTML, CSS e JavaScript, melhorar a organização dos arquivos e aprender a desenvolver um site com diferentes páginas e funcionalidades.
 
-## 🚧 Status
+## 🚧 Status do projeto
 
 **Em desenvolvimento.**
 
-Ainda estamos trabalhando em algumas partes do site e adicionando novas funcionalidades.
+O site está sendo construído e ajustado conforme o andamento do projeto, com melhorias no visual, na navegação e nas funcionalidades.
 
-## 👨‍💻 Projeto
+## 👨‍💻 Projeto acadêmico
 
-Projeto desenvolvido por estudantes de **Engenharia da Computação** para fins acadêmicos.
+Desenvolvido por estudantes de Engenharia da Computação como parte das atividades acadêmicas da FACENS.
+
+© 2026 — Projeto acadêmico de Web Design — InterAuto.
