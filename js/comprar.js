@@ -8,8 +8,8 @@ function cardHTML(c) {
   const loja = lojaPorId(c.loja);
   return `
   <article class="card" data-id="${c.id}" tabindex="0" aria-label="Ver detalhes de ${c.marca} ${c.modelo}">
-    <img src="${c.img}" alt="${c.marca} ${c.modelo}" loading="lazy">
-    <h2>${c.marca} ${c.modelo}</h2>
+    ${imgHTML(c.img, `${c.marca} ${c.modelo} ${c.ano}`)}
+    <h3>${c.marca} ${c.modelo}</h3>
     <p>${c.ano} · ${fmtKm(c.km)} · ${c.comb}<br>
       <strong>${fmtPreco(c.preco)}</strong><br>
       ${c.desc}<br>
@@ -50,7 +50,7 @@ function abrirCarro(id) {
 
   $("modal-conteudo").innerHTML = `
     <div class="modal-col">
-      <img class="modal-img" src="${c.img}" alt="${c.marca} ${c.modelo}">
+      ${imgHTML(c.img, `${c.marca} ${c.modelo} ${c.ano}`, { classe: "modal-img", sizes: "(max-width: 700px) 100vw, 50vw", lazy: false })}
       <h2>${c.marca} ${c.modelo}</h2>
       <p class="car-info">${c.ano} · ${fmtKm(c.km)} · ${c.comb}</p>
       <p class="car-price grande">${fmtPreco(c.preco)}</p>

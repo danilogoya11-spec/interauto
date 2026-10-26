@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pages/login.html
+Disallow: /pages/cadastro.html
+
+Sitemap: https://interauto-jet.vercel.app/sitemap.xml

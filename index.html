@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>InterAuto</title>
+        <title>InterAuto | Compra e Venda de Carros</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Compre ou venda seu carro com a InterAuto. Veja ofertas de Fiat, Honda, Chevrolet e mais, de forma rápida, segura e sem complicação.">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="InterAuto">
+        <meta property="og:title" content="InterAuto | Compra e Venda de Carros">
+        <meta property="og:description" content="Compre ou venda seu carro com a InterAuto. Veja ofertas de Fiat, Honda, Chevrolet e mais, de forma rápida, segura e sem complicação.">
+        <link rel="canonical" href="https://interauto-jet.vercel.app/">
+        <meta property="og:locale" content="pt_BR">
+        <meta property="og:url" content="https://interauto-jet.vercel.app/">
+        <meta property="og:image" content="https://interauto-jet.vercel.app/images/telas/Imagem_capa.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="InterAuto | Compra e Venda de Carros">
+        <meta name="twitter:description" content="Compre ou venda seu carro com a InterAuto. Veja ofertas de Fiat, Honda, Chevrolet e mais, de forma rápida, segura e sem complicação.">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -13,7 +25,17 @@
         <link rel="stylesheet" href="css/cards.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="icon" type="image/png" href="images/telas/favicon.png">
-        <script src="./js/efeitos.js"></script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "AutoDealer",
+          "name": "InterAuto",
+          "url": "https://interauto-jet.vercel.app/",
+          "description": "Compra e venda de veículos com segurança, transparência e agilidade.",
+          "areaServed": "BR"
+        }
+        </script>
+        <script src="./js/efeitos.js" defer></script>
     </head>
     <body>
         <header>
@@ -65,24 +87,24 @@
             <br>
             <article class="texto">
                 <div>
-                    <img src="images/banners/Logo_Fiat.png" alt="">
+                    <img src="images/banners/Logo_Fiat.png" alt="Logo da Fiat">
                     <p><strong>Fiat</strong>
                     <br>Parceiro oficial</p>
                 </div>
                 <div>
-                    <img src="images/banners/Logo_Honda.png" alt="">
+                    <img src="images/banners/Logo_Honda.png" alt="Logo da Honda">
                     <p><strong>Honda</strong>
                     <br>Parceiro oficial</p>
                 </div>
                 <div>
-                    <img src="images/banners/Logo_Chevrolet.png" alt="">
+                    <img src="images/banners/Logo_Chevrolet.png" alt="Logo da Chevrolet">
                     <p><strong>Chevrolet</strong>
                     <br>Parceiro oficial</p>
                 </div>
             </article>
          </section>
         <section class="ofertas-carros">
-            <h1 id="ofertas">Ofertas especias:</h1>
+            <h1 id="ofertas">Ofertas especiais:</h1>
             <div class="carrossel-container">
 
                 <button class="seta-carrossel"
@@ -93,8 +115,11 @@
                 <div class="carros" id="carros">
 
                 <article class="card">
-                     <img src="images/carros/Chevrolet_Celta.jpg" alt="Carro" height="250">
-                    <h2>Chevrolet Celta</h2>
+                     <picture>
+                        <source type="image/webp" srcset="images/carros/Chevrolet_Celta-480.webp 480w, images/carros/Chevrolet_Celta-800.webp 800w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Chevrolet_Celta.jpg" alt="Chevrolet Celta 2010" width="888" height="592" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Chevrolet Celta</h3>
                     <p>2010 · 89.000 Km · Flex<br>
                         <strong>R$ 24.900<br></strong>
                         Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade.
@@ -102,8 +127,11 @@
                     <button>Comprar</button>
                 </article>
                 <article class="card">
-                    <img src="images/carros/Honda_Accord.jpg" alt="Carro">
-                    <h2>Honda Accord</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Honda_Accord-480.webp 480w, images/carros/Honda_Accord-738.webp 738w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Honda_Accord.jpg" alt="Honda Accord 1994" width="738" height="414" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Honda Accord</h3>
                     <p>1994 · 178.000 Km · Gasolina<br>
                       <strong> R$ 32.900<br></strong>
                         Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada.</p>
@@ -111,8 +139,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Uno.jpg" alt="Carro">
-                    <h2>Fiat Uno</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Fiat_Uno-480.webp 480w, images/carros/Fiat_Uno-678.webp 678w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Fiat_Uno.jpg" alt="Fiat Uno 1998" width="678" height="452" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Fiat Uno</h3>
                     <p>1998 · 142.000 Km · Gasolina<br>
                        <strong>R$ 14.500<br></strong> 
                         Clássico bem conservado, motor forte e baixo custo de manutenção. Ótimo primeiro carro.
@@ -121,8 +152,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Palio.jpg" alt="Carro" >
-                    <h2>Fiat Palio</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Fiat_Palio-480.webp 480w, images/carros/Fiat_Palio-552.webp 552w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Fiat_Palio.jpg" alt="Fiat Palio 2003" width="552" height="414" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Fiat Palio</h3>
                     <p>2003 · 105.000 Km · Flex<br>
                       <strong> R$ 19.900<br></strong>
                         Direção leve, ótimo para cidade, documentação em dia. Aceita troca.
@@ -130,8 +164,11 @@
                     <button>Comprar</button>
                 </article>
                 <article class="card">
-                    <img src="images/carros/Honda_Skyline.jpg" alt="Carro">
-                    <h2>Nissan Skyline</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Honda_Skyline-480.webp 480w, images/carros/Honda_Skyline-678.webp 678w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Honda_Skyline.jpg" alt="Nissan Skyline 1999" width="678" height="452" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Nissan Skyline</h3>
                     <p>1999 · 84.000 Km · Gasolina<br>
                         <strong>R$ 389.900<br></strong>
                         Esportivo japonês raro, motor original, pintura preservada e documentação completa. Para colecionador.
@@ -140,8 +177,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Chevrolet_Astra_Sedan.jpg" alt="Carro">
-                    <h2>Chevrolet Astra Sedan</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Chevrolet_Astra_Sedan-480.webp 480w, images/carros/Chevrolet_Astra_Sedan-800.webp 800w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Chevrolet_Astra_Sedan.jpg" alt="Chevrolet Astra Sedan 2008" width="1280" height="960" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Chevrolet Astra Sedan</h3>
                     <p>2008 · 121.000 Km · Flex<br>
                         <strong>R$ 27.900<br></strong>
                         Ar-condicionado, direção hidráulica e vidros elétricos. Revisões em dia e pneus novos.
@@ -150,8 +190,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Chevrolet_Astra_Hatch.jpg" alt="Carro">
-                    <h2>Chevrolet Astra Hatch</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Chevrolet_Astra_Hatch-480.webp 480w, images/carros/Chevrolet_Astra_Hatch-800.webp 800w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Chevrolet_Astra_Hatch.jpg" alt="Chevrolet Astra Hatch 2011" width="1024" height="709" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Chevrolet Astra Hatch</h3>
                     <p>2011 · 98.000 Km · Flex<br>
                         <strong>R$ 34.900<br></strong>
                         Segundo dono, central multimídia, rodas de liga leve e ótimo conforto para viagens.
@@ -160,8 +203,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Uno_Turbo.jpg" alt="Carro">
-                    <h2>Fiat Uno Turbo</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Fiat_Uno_Turbo-480.webp 480w, images/carros/Fiat_Uno_Turbo-800.webp 800w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Fiat_Uno_Turbo.jpg" alt="Fiat Uno Turbo 1994" width="984" height="635" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Fiat Uno Turbo</h3>
                     <p>1994 · 118.000 Km · Gasolina<br>
                         <strong>R$ 59.900<br></strong>
                         Lendário 1.4 turbo, original de fábrica, funcionamento perfeito. Item de colecionador.
@@ -170,8 +216,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Honda_HRV.jpg" alt="Carro">
-                    <h2>Honda HR-V</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Honda_HRV-480.webp 480w, images/carros/Honda_HRV-690.webp 690w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Honda_HRV.jpg" alt="Honda HR-V 2019" width="690" height="460" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Honda HR-V</h3>
                     <p>2019 · 62.000 Km · Flex<br>
                         <strong>R$ 98.900<br></strong>
                         Câmbio automático CVT, câmera de ré, banco de couro e revisões feitas na concessionária.
@@ -180,8 +229,11 @@
                 </article>
 
                 <article class="card">
-                    <img src="images/carros/Fiat_Mobi.jpg" alt="Carro">
-                    <h2>Fiat Mobi</h2>
+                    <picture>
+                        <source type="image/webp" srcset="images/carros/Fiat_Mobi-447.webp 447w" sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw">
+                        <img src="images/carros/Fiat_Mobi.jpg" alt="Fiat Mobi 2021" width="447" height="447" loading="lazy" decoding="async">
+                    </picture>
+                    <h3>Fiat Mobi</h3>
                     <p>2021 · 38.000 Km · Flex<br>
                         <strong>R$ 52.900<br></strong>
                         Único dono, compacto e econômico, ideal para o trânsito da cidade. Ainda com garantia de fábrica.
@@ -213,11 +265,11 @@
                         <em class="canal-tag">Resposta rápida</em>
                     </a>
 
-                    <a href="mailto:contato@interauto.example" class="contato-email">
+                    <a href="#contato" class="contato-email" data-usuario="contato" data-dominio="interauto.example">
                         <img src="images/telas/Email_logo.png" alt="Ícone de e-mail">
                         <span class="canal-texto">
                             <strong>E-mail</strong>
-                            <small>contato@interauto.example</small>
+                            <small data-email-texto></small>
                         </span>
                     </a>
                 </div>
@@ -225,10 +277,10 @@
             <br><br><br>
             <div class="imagens">
             <a href="pages/comprar.html">
-                <img id="img1" src="images/banners/interauto_comprar.png" alt="Carro">
+                <img id="img1" src="images/banners/interauto_comprar.png" alt="Comprar carros na InterAuto">
             </a>
             <a href="pages/vender.html">
-                <img id="img2" src="images/banners/interauto_vender.png" alt="Carro">
+                <img id="img2" src="images/banners/interauto_vender.png" alt="Vender seu carro na InterAuto">
             </a>
         </div>
         </section>
@@ -253,7 +305,7 @@
         <script>
             /* Liga cada botão "Comprar" da home ao carro correspondente da lista CARROS */
             document.querySelectorAll("#carros .card").forEach(card => {
-                const nome = card.querySelector("h2").textContent.trim();
+                const nome = card.querySelector("h3").textContent.trim();
                 const ano = parseInt(card.querySelector("p").firstChild.textContent);
                 const carro = CARROS.find(c => `${c.marca} ${c.modelo}` === nome && c.ano === ano);
                 if (!carro) return;
@@ -261,6 +313,16 @@
                 card.querySelector("button").addEventListener("click", () => {
                     location.href = "pages/comprar.html?carro=" + carro.id;
                 });
+            });
+        </script>
+
+        <script>
+            /* Monta o link de e-mail aqui para não deixar o endereço em texto puro no HTML (anti-spam) */
+            document.querySelectorAll("[data-usuario]").forEach(a => {
+                const email = a.dataset.usuario + "@" + a.dataset.dominio;
+                a.href = "mailto:" + email;
+                const texto = a.querySelector("[data-email-texto]");
+                if (texto) texto.textContent = email;
             });
         </script>
 

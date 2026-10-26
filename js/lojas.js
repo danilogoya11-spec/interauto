@@ -24,6 +24,31 @@ const FOTOS = {
   mobi:        "../images/carros/Fiat_Mobi.jpg"
 };
 
+/* Versões WebP geradas para cada foto (arquivos Nome-LARGURA.webp, na mesma pasta do JPG).
+   O JPG continua como alternativa. Se criar novas versões, adicione aqui. */
+const WEBP_LARGURAS = {
+  Chevrolet_Astra_Hatch: [480, 800],
+  Chevrolet_Astra_Sedan: [480, 800],
+  Chevrolet_Celta: [480, 800],
+  Fiat_Mobi: [447],
+  Fiat_Palio: [480, 552],
+  Fiat_Uno: [480, 678],
+  Fiat_Uno_Turbo: [480, 800],
+  Honda_Accord: [480, 738],
+  Honda_HRV: [480, 690],
+  Honda_Skyline: [480, 678]
+};
+
+/* Monta a tag <img> já com as versões WebP (srcset), para o navegador baixar o tamanho certo. */
+function imgHTML(src, alt, { classe = "", sizes = "(max-width: 500px) 100vw, (max-width: 900px) 50vw, 25vw", lazy = true } = {}) {
+  const base = src.replace(/\.jpg$/i, "");
+  const larguras = WEBP_LARGURAS[base.split("/").pop()];
+  const srcset = larguras
+    ? ` srcset="${larguras.map(w => `${base}-${w}.webp ${w}w`).join(", ")}" sizes="${sizes}"`
+    : "";
+  return `<img src="${src}"${srcset} alt="${alt}"${classe ? ` class="${classe}"` : ""}${lazy ? ' loading="lazy"' : ""} decoding="async">`;
+}
+
 const CARROS = [
   { id: "celta-centro",    marca: "Chevrolet", modelo: "Celta",       ano: 2010, km: 89000,  comb: "Flex",     preco: 24900,  loja: "centro",     img: FOTOS.celta,      desc: "Único dono, revisado, pneus novos. Econômico e ideal para o dia a dia na cidade." },
   { id: "accord-campolim", marca: "Honda",     modelo: "Accord",      ano: 1994, km: 178000, comb: "Gasolina", preco: 32900,  loja: "campolim",   img: FOTOS.accord,     desc: "Interior em ótimo estado, banco de couro, ar-condicionado gelando. Raridade bem cuidada." },

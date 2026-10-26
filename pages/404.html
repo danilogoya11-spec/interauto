@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Página não encontrada | InterAuto</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A página que você procurou não foi encontrada. Volte para a InterAuto e veja os carros disponíveis.">
+        <meta name="robots" content="noindex">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="icon" type="image/png" href="../images/telas/favicon.png">
+        <style>
+            .erro-404 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                padding: 80px 20px;
+            }
+            .erro-404 .codigo {
+                margin: 0;
+                font-size: clamp(80px, 18vw, 160px);
+                font-weight: 800;
+                line-height: 1;
+                color: var(--laranja);
+            }
+            .erro-404 h1 { margin: 0; font-size: clamp(24px, 4vw, 36px); }
+            .erro-404 p { margin: 0; max-width: 46ch; color: var(--cinza); font-size: 18px; line-height: 1.6; }
+            .erro-404 .acoes { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 12px; }
+            .erro-404 .acoes button {
+                background-color: var(--laranja);
+                color: white;
+                font-weight: bold;
+                border: none;
+                padding: 12px 25px;
+                font-size: 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                font-family: var(--fonte);
+            }
+            .erro-404 .acoes .secundario {
+                background-color: transparent;
+                color: var(--laranja-escuro);
+                border: 2px solid var(--laranja-escuro);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="../index.html" class="logo">
+                <img src="../images/telas/logo_interauto.png" alt="Interauto">
+            </a>
+            <nav>
+                <h1>
+                    <a href="../pages/comprar.html">Comprar</a>
+                    <a href="../pages/vender.html">Vender</a>
+                    <a href="../pages/sobre.html">Sobre Nós</a>
+                </h1>
+            </nav>
+            <a href="../pages/login.html">
+                <button>Login</button>
+            </a>
+        </header>
+
+        <main class="erro-404">
+            <p class="codigo">404</p>
+            <h1>Página não encontrada</h1>
+            <p>O endereço que você acessou não existe ou foi movido. O resto do site continua funcionando normalmente.</p>
+            <div class="acoes">
+                <a href="../index.html"><button>Voltar para o início</button></a>
+                <a href="../pages/comprar.html"><button class="secundario">Ver carros</button></a>
+            </div>
+        </main>
+
+        <footer id="rodape">
+            <br><br>
+            <div>
+                <img src="../images/telas/logo_interauto.png" alt="Interauto">
+                <img src="../images/telas/logo_facens.jpg" alt="Facens">
+            </div>
+            <div>
+                <p style="text-align: center;">© 2026 Projeto acadêmico de Web Design – InterAuto</p>
+            </div>
+        </footer>
+    </body>
+</html>

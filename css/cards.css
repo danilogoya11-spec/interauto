@@ -82,6 +82,12 @@
   background-color: #fffffe;
 }
 
+/* Título do card: h3 com o mesmo tamanho visual do antigo h2 */
+.card h3 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
 .card img {
   width: 100%;
   height: 250px;
