@@ -1,0 +1,80 @@
+/* =========================================================
+   BASE — carregado em TODAS as páginas
+   Variáveis, reset, tipografia, botões e animações globais
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --laranja:        #ff7b00;
+  --laranja-vivo:   #f97316;
+  --laranja-escuro: #c2410c;
+  --laranja-claro:  #fdac60;
+  --bege:           #faefe2;
+  --bege-claro:     #fff4e8;
+  --escuro:         #14181f;
+  --texto:          #18181b;
+  --cinza:          #5f5e5a;
+
+  /* Tipografia */
+  --fonte: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Botões ---------- */
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+button:hover  { transform: translateY(-4px); }
+button:active { transform: translateY(-1px); }
+
+/* ---------- Revelar ao rolar (usado por efeitos.js) ---------- */
+.js .revelar,
+.js .item-revelar {
+  opacity: 0;
+  translate: 0 30px;
+}
+
+.js .revelar {
+  transition: opacity 0.6s ease, translate 0.6s ease;
+}
+
+/* Itens: mantém o hover original e só atrasa o efeito de aparecer */
+.js .item-revelar {
+  transition:
+    opacity 0.6s ease var(--atraso, 0s),
+    translate 0.6s ease var(--atraso, 0s),
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.js .revelar.visivel,
+.js .item-revelar.visivel {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar,
+  .js .item-revelar {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
+
+/* ---------- Telas de toque: evita hover "preso" ---------- */
+@media (hover: none) {
+  button:hover { transform: none; }
+}

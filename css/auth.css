@@ -1,0 +1,97 @@
+/* =========================================================
+   AUTENTICAÇÃO — carregado em: login.html e cadastro.html
+   ========================================================= */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px 0;
+}
+
+.login {
+  display: flex;
+  border: 1px solid black;
+  padding: 40px 50px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-family: var(--fonte);
+}
+
+.login form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-container input {
+  width: 300px;
+  height: 50px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 16px; /* evita zoom automático no iPhone */
+}
+
+.login button {
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: var(--laranja);
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: var(--fonte);
+}
+.login button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.remember-forgot {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+/* ---------- Mensagens de retorno ---------- */
+.auth-msg {
+  width: 300px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--fonte);
+}
+.auth-msg:empty   { display: none; }
+.auth-msg.erro    { color: #b91c1c; }
+.auth-msg.sucesso { color: #166534; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 600px) {
+  .login-container { min-height: auto; padding: 20px 16px; }
+  .login {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+  .login form { width: 100%; gap: 20px; }
+  .input-container { width: 100%; }
+  .input-container input,
+  .login button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .remember-forgot {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

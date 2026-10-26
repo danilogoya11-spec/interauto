@@ -1,0 +1,119 @@
+/* =========================================================
+   CARDS / OFERTAS — carregado em: index.html e comprar.html
+   Seção de ofertas, carrossel e card de carro
+   ========================================================= */
+
+.ofertas-carros {
+  display: grid;
+  gap: 0;
+  padding: 20px;
+  background-color: var(--bege);
+}
+
+#ofertas {
+  font-size: 50px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- Carrossel ---------- */
+.carrossel-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.carros {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex: 1;
+  min-width: 0;
+  width: 0;
+  box-sizing: border-box;
+}
+.carros::-webkit-scrollbar { display: none; }
+
+.carros .card {
+  flex: 0 0 calc((100% - 60px) / 4);
+  min-width: 0;
+  box-sizing: border-box;
+}
+.carros .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.seta-carrossel {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--laranja-escuro);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+.seta-carrossel:hover { background-color: var(--laranja-vivo); }
+
+/* ---------- Card ---------- */
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  background-color: #fffffe;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.card button {
+  width: 100%;
+  border: none;
+  background-color: var(--laranja-escuro);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: var(--fonte);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .carros .card { flex-basis: calc((100% - 24px) / 2); }
+  #ofertas { font-size: 32px; }
+}
+
+@media (max-width: 500px) {
+  .carros .card { flex-basis: 100%; }
+}
+
+@media (hover: none) {
+  .card:hover { transform: none; }
+}

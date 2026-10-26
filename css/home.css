@@ -1,0 +1,471 @@
+/* =========================================================
+   HOME — carregado SÓ em: index.html
+   Capa, frase, parceiros, banners, contato
+   (as ofertas/carrossel estão em cards.css)
+   ========================================================= */
+
+/* ---------- Capa ---------- */
+.capa {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  background-color: var(--escuro);
+  align-items: center;
+}
+.capa h1 {
+  font-size: 60px;
+  padding-left: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1;
+}
+.capa h2 {
+  align-self: center;
+  background-color: var(--bege-claro);
+}
+
+.capa-texto {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  column-gap: 40px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+.capa-texto p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 20px;
+  max-width: 620px;
+  padding-left: 20px;
+}
+.capa-texto strong {
+  color: var(--laranja-vivo);
+  font-weight: bold;
+}
+.capa-texto button {
+  background-color: var(--laranja);
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  border-radius: 6px;
+  font-family: var(--fonte);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+
+.capa-imagem { position: relative; }
+.capa-imagem::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--laranja-vivo);
+  border-radius: 20px;
+  z-index: 0;
+}
+.capa-texto img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Frase ---------- */
+.frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 760px;
+}
+.frase-icone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.frase-linha {
+  width: 50px;
+  height: 1px;
+  background-color: #7c2d12;
+}
+.frase-aspas {
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid var(--laranja-vivo);
+  border-radius: 50%;
+  color: var(--laranja-vivo);
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 14px;
+  text-align: center;
+}
+.frase p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+}
+.frase-autor {
+  margin-top: 16px;
+  color: var(--laranja-vivo);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* ---------- Parceiros ---------- */
+.parceiros {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--bege);
+}
+.parceiros div {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+}
+.parceiros img {
+  height: 200px;
+  width: 400px;
+  object-fit: contain;
+  padding: 50px;
+  background-color: var(--bege);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#parceria {
+  font-size: 20px;
+  text-align: center;
+  border-radius: 40px;
+  background-color: var(--bege);
+  color: var(--laranja-escuro);
+  border: 2px solid var(--laranja-escuro);
+  width: 25%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  row-gap: 10px;
+}
+.titulo h1,
+.titulo p { margin: 0; }
+
+.destaque {
+  font-size: 50px;
+  font-weight: bold;
+}
+.subdestaque {
+  color: var(--cinza);
+  width: auto;
+  padding-bottom: 12px;
+  font-size: 25px;
+  line-height: 1.5;
+}
+.subdestaque::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--laranja);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.texto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 30px;
+  font-size: 25px;
+  color: var(--cinza);
+}
+.texto p::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--laranja);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+.texto strong {
+  font-size: 40px;
+  color: #000000;
+}
+.texto div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.texto div:hover  { transform: translateY(-8px); }
+.texto div:active { transform: translateY(-2px); }
+
+/* ---------- Banners ---------- */
+.imagens {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--escuro);
+  gap: 20px;
+}
+.imagens a {
+  flex: 1 1 0;
+  min-width: 0;
+  display: block;
+  background-color: var(--escuro);
+}
+.imagens img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ---------- Contato ---------- */
+.contato {
+  padding: 64px 24px;
+  background-color: var(--escuro);
+  color: #ffffff;
+  text-align: center;
+}
+.contato-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contato-conteudo > p:not(.contato-etiqueta) {
+  max-width: 52ch;
+  margin: 0 auto;
+  color: #e4e4e7;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.contato-etiqueta {
+  display: inline-block;
+  margin: 0 auto 16px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  color: var(--laranja-vivo);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contato-opcoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+  text-align: left;
+}
+
+.contato-whatsapp,
+.contato-email {
+  --cor: #1f6b43;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 22px 22px 28px;
+  background-color: #1b2740;
+  border: 1px solid #2a3a58;
+  border-radius: 18px;
+  color: #ffffff;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.contato-email { --cor: var(--bege); }
+
+.contato-whatsapp::before,
+.contato-email::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--cor);
+}
+
+.contato-whatsapp:hover,
+.contato-whatsapp:focus-visible,
+.contato-email:hover,
+.contato-email:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--cor);
+  outline: none;
+}
+
+.contato-whatsapp img,
+.contato-email img {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  padding: 13px;
+  box-sizing: content-box;
+  background-color: var(--cor);
+  border-radius: 16px;
+}
+
+.canal-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.canal-texto strong { font-size: 20px; }
+.canal-texto small {
+  font-size: 15px;
+  color: #b6c2d6;
+  overflow-wrap: anywhere;
+}
+
+.canal-tag {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: rgba(31, 107, 67, 0.3);
+  color: #6ee7a8;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.contato-aviso {
+  display: block;
+  margin-top: 18px;
+  color: #c4c4c9;
+  font-size: 12px;
+}
+
+/* Botão flutuante do WhatsApp */
+.contato-atalho {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 10;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background-color: #16834a;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.contato-atalho:hover,
+.contato-atalho:focus-visible { background-color: #116c3c; }
+
+/* ---------- Responsivo ---------- */
+
+/* Notebook / tablet */
+@media (min-width: 901px) and (max-width: 1400px) {
+  .capa h1 { font-size: 48px; }
+
+  .texto { font-size: 20px; gap: 20px; }
+  .texto strong { font-size: 32px; }
+  .texto div { flex: 1 1 0; min-width: 0; }
+  .parceiros img { width: 100%; height: 170px; padding: 30px; }
+}
+
+/* Tablet / celular */
+@media (max-width: 900px) {
+  .capa { padding: 30px 20px; row-gap: 40px; }
+  .capa h1 { font-size: 42px; padding-left: 0; }
+  .capa-texto {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .capa-texto p {
+    font-size: 17px;
+    padding-left: 0;
+    max-width: 100%;
+  }
+  .capa-texto p br { display: none; }
+  .capa-texto button { margin-left: 0; }
+  .capa-imagem::before { top: 12px; right: -10px; }
+  .frase p { font-size: 22px; }
+
+  #parceria { width: auto; font-size: 16px; }
+  .destaque { font-size: 32px; }
+  .subdestaque { font-size: 18px; }
+  .subdestaque br { display: none; }
+  .texto {
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+  }
+  .texto strong { font-size: 30px; }
+  .parceiros div {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+  }
+  .parceiros img {
+    width: 100%;
+    height: 160px;
+    padding: 30px;
+  }
+
+  .contato { padding: 40px 16px; }
+  .contato-etiqueta { font-size: 16px; }
+  .imagens { flex-direction: column; gap: 12px; }
+  .imagens a { flex: none; }
+}
+
+@media (max-width: 760px) {
+  .contato-opcoes { grid-template-columns: 1fr; }
+  .canal-tag { display: none; }
+  .contato-atalho { right: 14px; bottom: 14px; }
+}
+
+@media (max-width: 500px) {
+  .capa h1 { font-size: 34px; }
+  .frase p { font-size: 19px; }
+  .destaque { font-size: 26px; }
+  .contato-conteudo h2 { font-size: 24px; }
+  .contato-atalho {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (hover: none) {
+  .texto div:hover,
+  .contato-whatsapp:hover,
+  .contato-email:hover { transform: none; }
+}

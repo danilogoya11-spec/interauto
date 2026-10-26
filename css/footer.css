@@ -1,0 +1,31 @@
+/* =========================================================
+   FOOTER — carregado em TODAS as páginas
+   ========================================================= */
+
+#rodape {
+  display: block;
+  align-items: center;
+  text-align: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.192);
+}
+
+#rodape div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#rodape div img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  #rodape div {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  #rodape div img { height: 50px; }
+}
