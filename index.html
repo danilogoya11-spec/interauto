@@ -26,8 +26,9 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="icon" type="image/png" href="images/telas/favicon.png">
         <script>
-            /* Se alguém abrir /index.html, vai para o endereço principal (/) */
-            if (location.pathname.endsWith("/index.html")) {
+            /* Se alguém abrir /index.html no site publicado, vai para o endereço principal (/).
+               Só em http/https: abrindo o arquivo direto no computador (file://), não redireciona. */
+            if (location.protocol.startsWith("http") && location.pathname.endsWith("/index.html")) {
                 location.replace(location.pathname.replace(/index\.html$/, "") + location.search + location.hash);
             }
         </script>
@@ -45,7 +46,7 @@
     </head>
     <body>
         <header>
-                 <a href="./" class="logo">
+                 <a href="index.html" class="logo">
                     <img src="images/telas/logo_interauto.png" alt="Interauto">
                 </a>
             <nav>
