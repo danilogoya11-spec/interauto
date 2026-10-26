@@ -49,6 +49,8 @@ InterAuto/
 │
 ├── index.html
 └── README.md
+└── robots.txt
+└── sitemap.xml
 ```
 
 ## 🎯 Objetivo
