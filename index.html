@@ -25,6 +25,12 @@
         <link rel="stylesheet" href="css/cards.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="icon" type="image/png" href="images/telas/favicon.png">
+        <script>
+            /* Se alguém abrir /index.html, vai para o endereço principal (/) */
+            if (location.pathname.endsWith("/index.html")) {
+                location.replace(location.pathname.replace(/index\.html$/, "") + location.search + location.hash);
+            }
+        </script>
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -39,15 +45,15 @@
     </head>
     <body>
         <header>
-                 <a href="index.html" class="logo">
+                 <a href="./" class="logo">
                     <img src="images/telas/logo_interauto.png" alt="Interauto">
                 </a>
             <nav>
-                <h1>
+                <div class="menu">
                 <a href="pages/comprar.html">Comprar</a>
                 <a href="pages/vender.html">Vender</a>
                 <a href="pages/sobre.html">Sobre Nós</a>
-                </h1>
+                </div>
             </nav>
             <a href="pages/login.html">
                  <button>Login</button>
@@ -80,7 +86,7 @@
         <section class="parceiros">
             <br>
             <article class="titulo">
-                <h1 id="parceria">PARCEIROS</h1>
+                <h2 id="parceria">PARCEIROS</h2>
                 <p class="destaque">Marcas que andam com a gente</p>
                 <p class="subdestaque">Trabalhamos com as montadoras mais confiáveis do <br>mercado.</p>
             </article>
@@ -104,7 +110,7 @@
             </article>
          </section>
         <section class="ofertas-carros">
-            <h1 id="ofertas">Ofertas especiais:</h1>
+            <h2 id="ofertas">Ofertas especiais:</h2>
             <div class="carrossel-container">
 
                 <button class="seta-carrossel"

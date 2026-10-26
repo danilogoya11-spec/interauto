@@ -146,6 +146,6 @@ if (formLogin) {
 
     iniciarSessao(usuario, lembrar);
     mostrarMensagem(formLogin, `Bem-vindo, ${usuario.nome.split(" ")[0]}! Entrando…`, "sucesso");
-    setTimeout(() => (window.location.href = "../index.html"), 800);
+    setTimeout(() => (window.location.href = "../"), 800);
   });
 }
