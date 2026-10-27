@@ -81,4 +81,3 @@ O site está sendo construído e ajustado conforme o andamento do projeto, com m
 Desenvolvido por estudantes de Engenharia da Computação como parte das atividades acadêmicas da FACENS.
 
 © 2026 — Projeto acadêmico de Web Design — InterAuto.
-© 2026 — Projeto acadêmico de Web Design — InterAuto.
