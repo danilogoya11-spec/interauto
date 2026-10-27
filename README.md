@@ -16,7 +16,8 @@ A ideia é criar um site onde o usuário possa conhecer os veículos disponívei
 - Página para visualizar os carros disponíveis.
 - Página para anunciar a venda de um veículo.
 - Página sobre o projeto.
-- Página de login.
+- Sistema de login e cadastro.
+- Página de erro 404.
 - Exibição de imagens e informações dos veículos.
 - Elementos interativos desenvolvidos com JavaScript.
 - Layout pensado para facilitar a navegação pelo site.
@@ -27,8 +28,14 @@ A ideia é criar um site onde o usuário possa conhecer os veículos disponívei
 InterAuto/
 │
 ├── css/
+│   ├── auth.css
+│   ├── base.css
+│   ├── cards.css
+│   ├── footer.css
+│   ├── header.css
+│   ├── home.css
 │   ├── lojas.css
-│   └── style.css
+│   └── sobre.css
 │
 ├── images/
 │   ├── banners/
@@ -37,18 +44,26 @@ InterAuto/
 │   └── telas/
 │
 ├── js/
+│   ├── auth.js
 │   ├── comprar.js
 │   ├── efeitos.js
 │   ├── lojas.js
 │   ├── script.js
+│   ├── sessao.js
 │   └── vender.js
 │
 ├── pages/
-│   ├── _DS_Store
-│   └── README.md
+│   ├── 404.html
+│   ├── cadastro.html
+│   ├── comprar.html
+│   ├── login.html
+│   ├── sobre.html
+│   └── vender.html
 │
+├── README.md
 ├── index.html
-└── README.md
+├── robots.txt
+├── sitemap.xml
 ```
 
 ## 🎯 Objetivo
@@ -65,4 +80,5 @@ O site está sendo construído e ajustado conforme o andamento do projeto, com m
 
 Desenvolvido por estudantes de Engenharia da Computação como parte das atividades acadêmicas da FACENS.
 
+© 2026 — Projeto acadêmico de Web Design — InterAuto.
 © 2026 — Projeto acadêmico de Web Design — InterAuto.
